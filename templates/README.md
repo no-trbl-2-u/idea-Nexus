@@ -39,7 +39,9 @@ templates/
 │   ├── oversight.md
 │   ├── jot.md
 │   ├── digest.md                      (the night shift; pairs with .github/workflows/night.yml)
-│   └── bootstrap.md                   (opt-in executor; see customization/bootstrap-automation.md)
+│   ├── bootstrap.md                   (opt-in executor; see customization/bootstrap-automation.md)
+│   ├── seed-check.md                  (gate a proposed change against spec.md's Refusals + Horizon)
+│   └── re-seed.md                     (field report back to spec.md's origin; see prompts/adopt-from-seed.md)
 ├── claude/                            → repo's .claude/ (+ CLAUDE.md → repo root)
 │   ├── CLAUDE.md                      (short pointer at agents.md; copy to repo ROOT)
 │   ├── settings.json                  (permission allowlist + hook wiring; see customization/claude-code.md)

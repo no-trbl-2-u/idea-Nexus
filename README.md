@@ -173,6 +173,38 @@ invent product direction for you.
 
 ---
 
+## TL;DR — I have a Seed payload
+
+> Use this if the repo already carries its decisions:
+> `spec.md`, `plan/bearings.md`, `plan/steps/01_build_plan.md`,
+> a Phase 1 brief, and a `nexus.adopt.json` manifest. That is
+> the shape a `build-plan` export from
+> [The Estate](https://github.com/no-trbl-2-u/the-estate) drops
+> in as. No clone beside the repo, no inference: a script copies
+> the kit around what is there and reports what it could not
+> resolve.
+
+Paste this at your project's root, after the payload's files
+are in place:
+
+```
+Run `npx --yes github:no-trbl-2-u/idea-Nexus#v0.2-estate adopt --commit`
+at the repo root, then read and follow
+https://github.com/no-trbl-2-u/idea-Nexus/blob/v0.2-estate/prompts/adopt-from-seed.md
+exactly, in order. Do not re-derive anything the payload
+already decided.
+```
+
+The script (`scripts/adopt.mjs`) never overwrites a file that
+exists, sweeps placeholders only over what it copied, and
+never guesses — an unresolved token becomes a
+`[needs-user-call]` row in `plan/AUDIT.md`. The prompt
+[`prompts/adopt-from-seed.md`](./prompts/adopt-from-seed.md)
+covers the remainder: clear those rows, prune what
+`plan/bearings.md` rules out, stop before `/ship-a-phase`.
+
+---
+
 ## What you get
 
 A small family of slash commands the autonomous loop uses:
@@ -392,12 +424,14 @@ nexus/
 ├── prompts/                           # canonical paste-prompts — versioned, public API
 │   ├── README.md                      # what these are, how the short paste uses them
 │   ├── adopt.md                       # the full "Adopt nexus" agent prompt
+│   ├── adopt-from-seed.md             # the warm path: spec + plan + manifest already present
 │   └── pitch.md                       # the full pitch-to-adopted agent prompt
 ├── package.json                       # the kit's own verify gate wiring
 ├── scripts/
 │   ├── verify.mjs                     # the kit's own gate: links · tree · discover · placeholders · anatomy · emoji · dualshell
 │   ├── pulse.mjs                      # offline instrument panel: queue/build-plan/candidate counts, no network
 │   ├── adopt-dryrun.mjs               # opt-in: mechanizes new-project.md's copy + placeholder-sweep step
+│   ├── adopt.mjs                      # the warm adoption path: copy around what exists, sweep from nexus.adopt.json, never overwrite
 │   ├── new-skill.mjs                  # skill scaffolder: emits skills/<name>.md + .claude/commands/<name>.md
 │   └── install-hooks.mjs              # opt-in: arms node scripts/verify.mjs as a pre-commit hook
 ├── playbooks/
@@ -469,7 +503,9 @@ nexus/
     │   ├── oversight.md
     │   ├── jot.md                      # user-input quickfire — append a row to plan/CRITIQUE.md
     │   ├── digest.md                   # the night shift — morning briefing + breadth checks
-    │   └── bootstrap.md                # opt-in executor (see customization/bootstrap-automation.md)
+    │   ├── bootstrap.md                # opt-in executor (see customization/bootstrap-automation.md)
+    │   ├── seed-check.md               # gate a proposed change against spec.md's Refusals + Horizon
+    │   └── re-seed.md                  # write the field report back to spec.md's origin
     ├── claude/                        # → repo's .claude/ (+ CLAUDE.md → repo root)
     │   ├── CLAUDE.md                  # short pointer at agents.md
     │   ├── settings.json              # permission allowlist + hook wiring

@@ -1,9 +1,14 @@
 {
-  "name": "nexus",
+  "name": "idea-nexus",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Methodology + template kit for autonomous-loop projects. This package.json exists so the kit's own verify gate runs the same way an adopter's does.",
+  "description": "Methodology + template kit for autonomous-loop projects, forked for The Estate: adds the warm adoption path (scripts/adopt.mjs) for build-plan payloads. This package.json also wires the kit's own verify gate so it runs the same way an adopter's does.",
+  "bin": {
+    "idea-nexus": "scripts/adopt.mjs"
+  },
   "scripts": {
+    "adopt": "node scripts/adopt.mjs",
     "verify": "node scripts/verify.mjs",
     "verify:adopt-dryrun": "node scripts/adopt-dryrun.mjs",
     "pulse": "node scripts/pulse.mjs",
