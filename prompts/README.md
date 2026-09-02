@@ -12,6 +12,7 @@
 |---|---|
 | [`adopt.md`](./adopt.md) | The full agent prompt for "I already have a spec.md, delegate the adoption." Paired with README's [TL;DR — clone + delegate the adoption](../README.md#tldr--clone--delegate-the-adoption). |
 | [`pitch.md`](./pitch.md) | The full agent prompt for "I have a pitch, no spec yet." Paired with README's [TL;DR — I have a pitch, no spec yet](../README.md#tldr--i-have-a-pitch-no-spec-yet). |
+| [`adopt-from-seed.md`](./adopt-from-seed.md) | The warm path: the repo already carries `spec.md`, `plan/bearings.md`, the build plan, and a `nexus.adopt.json` manifest (a build-plan payload from The Estate). `scripts/adopt.mjs` does the copying; the prompt covers the remainder. Paired with README's [TL;DR — I have a Seed payload](../README.md#tldr--i-have-a-seed-payload). |
 
 ## Why a separate file
 
