@@ -75,7 +75,7 @@ Triage classifies and routes them so `/iterate` and
 ## 6. Quick reference
 
 ```bash
-gh issue list --repo daretodave/nexus --state open \
+gh issue list --repo no-trbl-2-u/idea-Nexus --state open \
   --search "-label:triage:loop-queued -label:triage:needs-user -label:triage:closed -label:triage:reviewed -label:loop:opened" \
   --json number,title
 plan/AUDIT.md                        # routing target

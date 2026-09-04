@@ -143,7 +143,7 @@ Scope fence — what NOT to do:
     Tailwind. If bearings says CSS modules, primitives are
     CSS modules.
 
-Standing rules (carried from agents.md):
+Standing rules (carried from AGENTS.md):
 
   - Commit and push as a single atomic act once the whole
     tree is approved.

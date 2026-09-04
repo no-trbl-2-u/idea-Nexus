@@ -144,7 +144,7 @@ steps.
 
 ### §6. Hard rules
 
-The non-negotiables. 6–10 bullets. These mirror `agents.md`
+The non-negotiables. 6–10 bullets. These mirror `AGENTS.md`
 Standing Rules but may add skill-specific rules. Sample:
 
 ```

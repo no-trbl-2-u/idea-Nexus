@@ -18,7 +18,7 @@ ELSE                              →  /iterate
 ```
 
 No data step (the kit has no data layer) and no deploy gate
-(`agents.md` rule 4). Everything else is the standard march
+(`AGENTS.md` rule 4). Everything else is the standard march
 contract.
 
 ## 2. Invocation
@@ -45,10 +45,10 @@ Divergence → stop per §5.
 
 ```bash
 # The concierge lane: loop:do outranks everything.
-urgent=$(gh issue list --repo daretodave/nexus --state open \
+urgent=$(gh issue list --repo no-trbl-2-u/idea-Nexus --state open \
   --label loop:do --json number --jq 'length' 2>/dev/null || echo 0)
 
-unlabeled=$(gh issue list --repo daretodave/nexus --state open \
+unlabeled=$(gh issue list --repo no-trbl-2-u/idea-Nexus --state open \
   --search "-label:triage:loop-queued -label:triage:needs-user -label:triage:closed -label:triage:reviewed -label:loop:opened" \
   --json number --jq 'length' 2>/dev/null || echo 0)
 ```

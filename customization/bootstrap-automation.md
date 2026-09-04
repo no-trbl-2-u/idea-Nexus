@@ -41,7 +41,7 @@ runs end-to-end in ~10 minutes.
       `git@github.com:` URL form. Bootstrap detects this
       but you save a step by checking up front.
 - [ ] `git init` has run and the working tree has at least
-      `spec.md` + `agents.md` (the nexus adoption
+      `spec.md` + `AGENTS.md` (the nexus adoption
       artifacts) — or run the adoption playbook first.
 
 **Tokens / approvals you'll be prompted for (paste flow):**
@@ -547,7 +547,7 @@ template before installing it:
      GH_TOKEN: ${{ secrets.ACTIONS_PAT }}
    ```
 
-4. **The `Cloud-Run:` trailer carve-out in `agents.md`**
+4. **The `Cloud-Run:` trailer carve-out in `AGENTS.md`**
    becomes critical, because the daily-ceiling check
    can't distinguish cloud commits from local ones by
    author anymore — both are the user. Every cloud-

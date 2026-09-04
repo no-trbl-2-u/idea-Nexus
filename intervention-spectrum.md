@@ -90,7 +90,7 @@ having watched every commit.
 - Sub-agents (`scout`, `reader`, plus your domain specialists)
   configured and tested.
 - All operational secrets in `.env` (Netlify token, GitHub PAT
-  — see your project's `agents.md` Operational secrets section).
+  — see your project's `AGENTS.md` Operational secrets section).
 - **Harness enforcement + a pager, if you run on Claude Code.**
   A permission allowlist (`.claude/settings.json`) so no tick
   ever stalls on a prompt, guard hooks so the hard rules are

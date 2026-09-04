@@ -9,7 +9,7 @@
 
 `.github/workflows/march.yml` runs on a cron and invokes the
 [Claude Code GitHub Action](https://github.com/anthropics/claude-code-action)
-with a cloud-mode brief. The agent reads `agents.md`, runs `/march`,
+with a cloud-mode brief. The agent reads `AGENTS.md`, runs `/march`,
 ships a tick (or exits cleanly if there's nothing to do), and
 hands the runner back.
 
@@ -242,7 +242,7 @@ If you ever hit weekly-cap pressure, drop back to Sonnet.
 
 ## What the cloud agent will not do
 
-These are encoded in the brief and in `agents.md`'s standing rules:
+These are encoded in the brief and in `AGENTS.md`'s standing rules:
 
 - **Will not run `/oversight`.** It's interactive; cloud has no human.
 - **Will not run `/critique`.** Reader sub-agent needs Chrome.

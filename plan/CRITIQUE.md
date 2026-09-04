@@ -164,7 +164,7 @@ path, comprehension stumble. See `skills/critique.md`.
   `README.md:628` (hard rule + the command-table `/oversight`
   and `/bootstrap` rows), `concepts/architecture.md:206,338`,
   `concepts/asking-well.md`'s header + "where this is used
-  today" list, `templates/agents.md:138`,
+  today" list, `templates/AGENTS.md:138`,
   `templates/README.md:159`, `templates/skills/oversight.md:258,289`,
   `templates/claude/commands/oversight.md:9`,
   `templates/skills/ship-asset.md:272`,
@@ -434,7 +434,7 @@ path, comprehension stumble. See `skills/critique.md`.
 ### [x] [MED] templates/README.md / playbooks/new-project.md — documented sed one-liner's scope misses files the same step copies — this commit
 - fix: widened `playbooks/new-project.md`'s bash grep/sed scope
   and PowerShell `Get-ChildItem` scope from `./skills ./.claude
-  ./plan ./agents.md` to also include `./scripts` and
+  ./plan ./AGENTS.md` to also include `./scripts` and
   `./.env.example` — the two paths step 4's bulk copy lands but
   the documented replace step skipped. Confirmed the fix now
   covers the cited unresolved tokens

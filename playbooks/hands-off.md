@@ -78,7 +78,7 @@ also *page you*.
    (Slack/Discord/webhook: `NOTIFY_WEBHOOK_URL` instead.)
 3. Test: `node scripts/notify.mjs --title "test" --body "hi"`.
    Your phone buzzes or you're not done.
-4. Add the standing rule to your `agents.md` (the template
+4. Add the standing rule to your `AGENTS.md` (the template
    carries it — sync if you adopted earlier):
 
    > Before stopping on any failure-mode condition, run

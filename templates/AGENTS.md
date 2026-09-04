@@ -1,4 +1,4 @@
-# agents.md
+# AGENTS.md
 
 > The entry point for any AI agent landing in this repo cold
 > (Claude Code, Cursor, Aider, anything else). Read this top to
@@ -136,6 +136,14 @@ invoke a skill that does the right thing end-to-end.
 | `expand` | `skills/expand.md` | Plan-expansion pass; proposes phase candidates from accumulated signals. Posture-controlled (bold/strict/autonomous). |
 | `march` | `skills/march.md` | Outer dispatcher: triage → critique → phase → data → expand → iterate. |
 | `oversight` | `skills/oversight.md` | **User-in-the-loop.** The general-purpose skill that asks anything (`bootstrap` carries the one narrow provisioning exception). Promotes phase candidates. |
+| `bootstrap` | `skills/bootstrap.md` | **Authorized executor.** Provisions external resources (repo, hosting, DB), writes secrets, triggers the first deploy. May ask mid-run. |
+| `jot` | `skills/jot.md` | **The user's quickfire.** One note becomes one `plan/CRITIQUE.md` row; commit, push, exit in seconds. |
+| `digest` | `skills/digest.md` | **The night shift.** Daily pulse + morning briefing to `plan/DIGEST.md`; breadth checks; gate tunings proposed as candidates, never applied. Own workflow, never dispatched by march. |
+| `moderate` | `skills/moderate.md` | Drains the UGC moderation queues one item per tick; delete/ban always escalates to `/oversight`. **No UGC → delete this skill file.** |
+| `seed-check` | `skills/seed-check.md` | **Read-only.** One read of `spec.md` before any step the build plan did not name; reports drift, never blocks. |
+| `re-seed` | `skills/re-seed.md` | Writes the field report that travels back to wherever `spec.md` came from when the build stops matching it. Changes nothing else. |
+| `ship-asset` | `skills/ship-asset.md` | **Demand-pull only.** Render and ship one brand asset via `brander`. Hard-gated on `Surface:` in `plan/bearings.md` (`site`/`hybrid` only). |
+| `ship-migration` | `skills/ship-migration.md` | Companion to `ship-data` for the DB-backed data layer: one migration + RLS + rollback note + tests. **`gh-as-db`/`saas-cms`/`none` → delete this skill file.** |
 
 ### Invocation
 
@@ -149,6 +157,14 @@ invoke a skill that does the right thing end-to-end.
 /expand                      # propose new phase candidates
 /march                       # do the right thing
 /oversight                   # course-correct
+/jot <note>                  # quickfire finding -> plan/CRITIQUE.md
+/bootstrap                   # provision + first deploy (asks)
+/digest                      # night shift briefing (own workflow)
+/seed-check                  # read spec.md before an unplanned step
+/re-seed                     # field report back to spec.md's origin
+/ship-asset                  # one brand asset (site/hybrid only)
+/ship-migration              # one DB migration (pure-db/hybrid only)
+/moderate                    # drain UGC queues (UGC projects only)
 /loop 30m /march             # autonomous loop
 ```
 
@@ -158,6 +174,7 @@ invoke a skill that does the right thing end-to-end.
 |---|---|
 | `scout` | Open-web research with citations. |
 | `reader` | Fresh-eyes site observer. |
+| `brander` | Renders brand assets (OG images, favicons, social cards, SVG → PNG) from a structured brief; spawned by `/ship-asset`. |
 | <DOMAIN_SPECIALIST> | <when> |
 
 The main agent writes wiring, code, decisions. Spawn sub-agents

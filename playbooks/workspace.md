@@ -71,7 +71,7 @@ without ever needing a `.gitignore` entry per repo:
 
 - **Local scratch** — comparison notes, a running list of
   cross-product questions. Same category as `.article/`
-  (`agents.md`) inside a single repo: never tracked, never
+  (`AGENTS.md`) inside a single repo: never tracked, never
   linked from a tracked doc.
 - **An editor multi-root workspace file** (e.g. a `.code-
   workspace` for VS Code, or the equivalent session file for
@@ -103,7 +103,7 @@ root — not inside any one repo — can orient itself before
 `cd`-ing into the repo it needs:
 
 ```markdown
-<!-- workspace root CLAUDE.md (and its AGENTS.md mirror) -->
+<!-- workspace root AGENTS.md (CLAUDE.md is a one-line @AGENTS.md import) -->
 # Workspace root — not a repo
 
 This directory is a plain folder, never `git init`'d. Every
@@ -114,14 +114,15 @@ child directory is its own GitHub repo under the
 - `<product-a>/` — <one line: what it ships>
 - `<product-b>/` — <one line: what it ships>
 
-`cd` into the repo you need; each has its own agents.md/
+`cd` into the repo you need; each has its own AGENTS.md/
 CLAUDE.md, verify gate, and git history. Nothing at this level
 is tracked or shipped.
 ```
 
 This snippet now has a copyable counterpart:
 [`templates/workspace/`](../templates/workspace/) ships
-`CLAUDE.md` + `AGENTS.md` (the pair above, with placeholders),
+`AGENTS.md` (the text above, with placeholders) + `CLAUDE.md`
+(a one-line `@AGENTS.md` import, so Claude Code auto-loads it),
 a human-facing `README.md`, and `REPOS.md` — a clone manifest
 for rebuilding the workspace on a new machine. Copy the
 *content* into the root, not the files' git history — the root

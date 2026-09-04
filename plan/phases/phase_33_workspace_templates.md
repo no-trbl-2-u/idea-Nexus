@@ -70,7 +70,7 @@ vs brownfield.
   markdown manifest a human or agent reads and executes by
   hand, matching every other template in this kit (docs, not
   scripts, unless a script already exists to extend — see
-  `agents.md`'s repo shape). No new `.mjs` file.
+  `AGENTS.md`'s repo shape). No new `.mjs` file.
 - **Rewriting `new-project.md` / `existing-project.md`.**
   Same deferral reason as phase 22: topology is additive
   context for adopters past single-repo, not a rewrite of the

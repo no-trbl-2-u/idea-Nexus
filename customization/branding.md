@@ -320,7 +320,7 @@ branding:
 4. Add a one-line pointer at
    `<repo>/.claude/commands/ship-asset.md` matching the other
    commands.
-5. Note in `agents.md` Sub-agents table that `brander`
+5. Note in `AGENTS.md` Sub-agents table that `brander`
    exists.
 6. Install render deps when the first asset task fires:
    `pnpm add -w satori @resvg/resvg-js sharp` (or in the

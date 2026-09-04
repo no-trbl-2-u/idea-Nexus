@@ -113,7 +113,7 @@ in that directory and why.)
 When the agent returns, expect:
 
 - A new commit titled `chore: adopt nexus methodology`.
-- Files added: `agents.md`, `CLAUDE.md`, `plan/`, `skills/`,
+- Files added: `AGENTS.md`, `CLAUDE.md`, `plan/`, `skills/`,
   `.claude/`, `scripts/`, `.env.example`.
 - Existing source code: **untouched** (per the playbooks).
 - A list of `[needs-user-call]` rows in `plan/AUDIT.md` if the
@@ -419,8 +419,8 @@ hardest to reach — most projects get to level 3 and stay there.
 nexus/
 ├── README.md                          # this file
 ├── intervention-spectrum.md           # the levels in detail
-├── agents.md                          # nexus's OWN rule book (the kit runs on itself)
-├── CLAUDE.md                          # pointer at agents.md (Claude Code only auto-loads CLAUDE.md from repo root)
+├── AGENTS.md                          # nexus's OWN rule book (the kit runs on itself)
+├── CLAUDE.md                          # pointer at AGENTS.md (Claude Code only auto-loads CLAUDE.md from repo root)
 ├── prompts/                           # canonical paste-prompts — versioned, public API
 │   ├── README.md                      # what these are, how the short paste uses them
 │   ├── adopt.md                       # the full "Adopt nexus" agent prompt
@@ -474,7 +474,7 @@ nexus/
 ├── .github/                           # nexus's OWN cloud loop (march.yml + CLOUD_LOOP.md + ISSUE_TEMPLATE/)
 └── templates/
     ├── README.md                      # how to apply the templates
-    ├── agents.md                      # rule-book template (target: repo root)
+    ├── AGENTS.md                      # rule-book template (target: repo root)
     ├── design-prompt.md               # paste into a fresh agent to commission a visual system
     ├── plan/                          # → repo's plan/
     │   ├── README.md
@@ -507,7 +507,7 @@ nexus/
     │   ├── seed-check.md               # gate a proposed change against spec.md's Refusals + Horizon
     │   └── re-seed.md                  # write the field report back to spec.md's origin
     ├── claude/                        # → repo's .claude/ (+ CLAUDE.md → repo root)
-    │   ├── CLAUDE.md                  # short pointer at agents.md
+    │   ├── CLAUDE.md                  # short pointer at AGENTS.md
     │   ├── settings.json              # permission allowlist + hook wiring
     │   ├── hooks/guard.mjs            # mechanical hard rules (PreToolUse + Stop)
     │   ├── commands/                  # one terse pointer per skill

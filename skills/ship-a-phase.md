@@ -111,7 +111,7 @@ comment (best-effort):
 
 ```bash
 node templates/scripts/loop-issue.mjs phase-close \
-  --phase <N> --commit <sha> --deploy-url https://github.com/daretodave/nexus
+  --phase <N> --commit <sha> --deploy-url https://github.com/no-trbl-2-u/idea-Nexus
 ```
 
 ### Step 9 — Done
@@ -124,13 +124,13 @@ Return cleanly.
 2. Commit + push atomic; no dirty tree at turn end.
 3. No `Co-Authored-By`, no emojis (cloud `Cloud-Run:` trailer
    is the one carve-out).
-4. Templates are public API (`agents.md` rule 7).
+4. Templates are public API (`AGENTS.md` rule 7).
 5. Voice rules are law; when in doubt, match the exemplars.
 6. The mirror is best-effort, never gating.
 
 ## 6. Failure modes
 
-Before any stop: surface it loud per `agents.md` rule 6 (issue
+Before any stop: surface it loud per `AGENTS.md` rule 6 (issue
 or mirror comment, best-effort).
 
 Repo-shaped — stop the tick:

@@ -159,7 +159,7 @@ question twice during the build.
 
 ### Hard rules
 
-Carry over from `../nexus/templates/agents.md` Standing Rules. These
+Carry over from `../nexus/templates/AGENTS.md` Standing Rules. These
 are universal:
 
 1. Commit and push as a single atomic act.
@@ -226,7 +226,7 @@ Run from your repo root. This is one `node` command (Node
 bash/zsh, PowerShell, or `cmd.exe` — no shell twin needed:
 
 ```bash
-node -e "const fs=require('fs');for(const [s,d] of [['templates/skills','skills'],['templates/claude','.claude'],['templates/claude/CLAUDE.md','CLAUDE.md'],['templates/scripts','scripts'],['templates/agents.md','agents.md'],['templates/env/env.example','.env.example'],['templates/plan/AUDIT.md','plan/AUDIT.md'],['templates/plan/CRITIQUE.md','plan/CRITIQUE.md'],['templates/plan/PHASE_CANDIDATES.md','plan/PHASE_CANDIDATES.md'],['templates/plan/README.md','plan/README.md'],['templates/plan/phases','plan/phases']]) fs.cpSync('../nexus/'+s,d,{recursive:true})"
+node -e "const fs=require('fs');for(const [s,d] of [['templates/skills','skills'],['templates/claude','.claude'],['templates/claude/CLAUDE.md','CLAUDE.md'],['templates/scripts','scripts'],['templates/AGENTS.md','AGENTS.md'],['templates/env/env.example','.env.example'],['templates/plan/AUDIT.md','plan/AUDIT.md'],['templates/plan/CRITIQUE.md','plan/CRITIQUE.md'],['templates/plan/PHASE_CANDIDATES.md','plan/PHASE_CANDIDATES.md'],['templates/plan/README.md','plan/README.md'],['templates/plan/phases','plan/phases']]) fs.cpSync('../nexus/'+s,d,{recursive:true})"
 ```
 
 (The `CLAUDE.md` line is deliberate, not redundant with the
@@ -265,7 +265,7 @@ both BSD and GNU sed accept identically, so the trailing
 
 ```bash
 grep -rl '<PROJECT>\|<PROJECT_LOWER>\|<PROJECT_TAGLINE>\|<HOSTING_URL>\|<HOSTING_PROVIDER>\|<REPO_SLUG>\|<DEFAULT_BRANCH>\|<PROJECT_PKG_PREFIX>' \
-    ./skills ./.claude ./plan ./agents.md ./scripts ./.env.example ./data \
+    ./skills ./.claude ./plan ./AGENTS.md ./scripts ./.env.example ./data \
   2>/dev/null | xargs sed -i.bak \
       -e 's/<PROJECT_LOWER>/thock/g' \
       -e 's/<PROJECT>/thock/g' \
@@ -293,7 +293,7 @@ $repl = @{
   '<DEFAULT_BRANCH>'      = 'main'
   '<PROJECT_PKG_PREFIX>'  = '@thock'
 }
-Get-ChildItem -Recurse -File .\skills, .\.claude, .\plan, .\agents.md, .\scripts, .\.env.example, .\data -ErrorAction SilentlyContinue |
+Get-ChildItem -Recurse -File .\skills, .\.claude, .\plan, .\AGENTS.md, .\scripts, .\.env.example, .\data -ErrorAction SilentlyContinue |
   ForEach-Object {
     $text = Get-Content $_.FullName -Raw
     foreach ($k in $repl.Keys) { $text = $text -replace [regex]::Escape($k), $repl[$k] }

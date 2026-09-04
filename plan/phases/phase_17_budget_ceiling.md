@@ -40,7 +40,7 @@
   cron line already sets precedent: cadence/ceiling knobs in
   `march.yml` are literal values adopters hand-edit or bootstrap
   bakes in, not tokens resolved by the documented sed one-liner
-  (that scope is `./skills ./.claude ./plan ./agents.md` —
+  (that scope is `./skills ./.claude ./plan ./AGENTS.md` —
   `.github` was never in it). Matching the existing pattern
   beats inventing a second mechanism for the same job.
 - **Configurable weights.** 3-for-phase / 1-for-churn is a
@@ -54,7 +54,7 @@
 from the cloud tick: GitHub refuses any push touching
 `.github/workflows/*.yml` from a token without the `workflows`
 scope, and `ACTIONS_PAT` here is deliberately Contents + Issues
-only (`agents.md` "Operational secrets"). This isn't specific
+only (`AGENTS.md` "Operational secrets"). This isn't specific
 to this phase — it's a standing constraint on every future phase
 that touches a workflow file. Shipped the template + bootstrap.mjs
 + docs (the actual product); filed issue #12 with the exact patch

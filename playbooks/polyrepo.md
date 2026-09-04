@@ -153,7 +153,7 @@ bridged per above, works today with no changes.
       `../plan` via `additionalDirectories` (or the
       non-Claude-Code equivalent).
 - [ ] You've confirmed the push order — product first, plan
-      last — is written into that product's `agents.md` or
+      last — is written into that product's `AGENTS.md` or
       `bearings.md`, not just remembered.
 - [ ] Each product repo still verifies and deploys entirely on
       its own; `plan/` has no gate.

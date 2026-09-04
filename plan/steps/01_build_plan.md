@@ -22,7 +22,7 @@ unblocks). Tick in the same commit that ships the phase.
       hardening for unattended runs (commit e593606)
 - [x] Phase 4 — Hands-off + recovery playbooks; claude-code +
       lanes customization (commit fe75c78)
-- [x] Phase 5 — Self-adoption substrate: agents.md, plan/,
+- [x] Phase 5 — Self-adoption substrate: AGENTS.md, plan/,
       skills/, .claude/ (this commit)
 - [x] Phase 6 — Cloud loop: nexus marches on Actions,
       Sonnet 5, 4 ticks/day (this commit; armed once the
@@ -130,7 +130,7 @@ Pending section for their evidence trails):**
   `.github/workflows/*.yml` shipped only the `templates/` half
   (issue #12 waited 7 weeks for a local session this way). The
   re-minted PAT grants Workflows read/write, so cloud ticks
-  now push those files themselves — see `agents.md`
+  now push those files themselves — see `AGENTS.md`
   "Operational secrets" for the scope rationale.
 
 ## Phase log

@@ -85,7 +85,7 @@ The five canonical state files:
 | `plan/CRITIQUE.md` | External-observer findings. Pending section is `iterate`'s second queue. | `critique`, `iterate`, `march`, `oversight` |
 | `plan/bearings.md` | Stack pins, URL contract, standing decisions, hard rules. | All skills, all sub-agents. |
 
-One more file is canonical: `agents.md` at the repo root — the
+One more file is canonical: `AGENTS.md` at the repo root — the
 **rule book**. Standing rules apply across every skill. New
 projects copy the template and add domain-specific rules.
 

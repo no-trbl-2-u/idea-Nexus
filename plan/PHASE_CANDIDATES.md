@@ -36,7 +36,7 @@ kit + sibling surveys.
   credential wiring.
 - rationale: this has cost three built-and-discarded cloud
   ticks (each ran the phase to completion, verified green, then
-  threw the diff away per agents.md rule 1) and will keep
+  threw the diff away per AGENTS.md rule 1) and will keep
   costing one per future phase that touches
   `.github/workflows/*.yml` — for nexus and for any adopter who
   copies the cloud-loop template and later edits their own
@@ -104,7 +104,7 @@ kit + sibling surveys.
   `prompts/README.md`; README TL;DR sections shrink ~120
   lines; a verify leg keeping any README excerpt byte-synced
   with prompts/; `skills/critique.md` dry-runs the new short
-  paste; agents.md notes prompts/ paths are public API.
+  paste; AGENTS.md notes prompts/ paths are public API.
 - estimated phases: 1
 - conflicts: pairs with the README conversion pass below —
   promote together or sequence prompts/ first.
@@ -381,7 +381,7 @@ kit + sibling surveys.
   fixes the allowlist/caveat mismatch `plan/CRITIQUE.md` flagged.
 - estimated phases: 1
 - conflicts: none — settings.json's allowlist shape is internal
-  to the template, not public API (agents.md rule 7 covers
+  to the template, not public API (AGENTS.md rule 7 covers
   paths + placeholder vocabulary, not allowlist contents).
 
 ### [ ] [score 7.1] npx nexus-adopt: the mechanical half as an initializer
@@ -533,7 +533,7 @@ kit + sibling surveys.
   4 `march` runs green, no failures), 1 — `a74f7b6` ("critique:
   pass 6 — 4 findings (2 high, 2 med)", from the 2026-07-19
   20:18 UTC tick) — landed with no `Cloud-Run:` trailer at all,
-  breaking agents.md rule 2's carve-out. The workflow's own
+  breaking AGENTS.md rule 2's carve-out. The workflow's own
   ceiling check (`march.yml`'s "Daily commit ceiling check"
   step) counts cloud volume by `git log --grep='Cloud-Run:'`,
   so this commit silently doesn't count toward the 8/24h
@@ -565,7 +565,7 @@ kit + sibling surveys.
   SHA when the ceiling didn't skip, and — if new commits landed
   without the trailer on all of them — opens an unlabeled
   issue naming the offending SHA (the loud-not-silent pattern
-  agents.md rule 6 already prescribes elsewhere). Gate-side
+  AGENTS.md rule 6 already prescribes elsewhere). Gate-side
   enforcement isn't possible (verify.mjs can't tell cloud from
   local commits), so this has to live in the workflow, not the
   gate.
@@ -622,7 +622,7 @@ kit + sibling surveys.
   an issue. The heartbeat's flatline alarm was blind to it
   (`--status completed` counts failed runs — fixed this same
   session) and no other watcher exists for failure streaks.
-- rationale: agents.md rule 6 (blocked is loud) must apply to
+- rationale: AGENTS.md rule 6 (blocked is loud) must apply to
   the loop's own infrastructure. The default `GITHUB_TOKEN`
   survives PAT death and can still file issues.
 - proposed scope: an `if: failure()` step in `march.yml` and

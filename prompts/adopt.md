@@ -81,7 +81,7 @@ Then:
   - Then stop. Do not invoke /ship-a-phase yourself; let the
     user do that as the first conscious step.
 
-Standing rules carried from agents.md:
+Standing rules carried from AGENTS.md:
   - Commit and push as a single atomic act.
   - No Co-Authored-By trailers, no emojis.
   - No --no-verify, no force-push, no destructive resets.

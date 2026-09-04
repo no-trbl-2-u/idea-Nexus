@@ -99,7 +99,7 @@ Walk the five triggers in moderation-loop.md
 new-account aging past 24h, repeat-offender pattern, non-empty
 appeal queue, pre-filter false-positive drift). Any trigger
 firing → leave a flagged row in `plan/MOD_AUDIT.md` (or open an
-issue, `agents.md` rule 6) so the next `/oversight` brief
+issue, `AGENTS.md` rule 6) so the next `/oversight` brief
 surfaces it. This step runs whether or not Step 1 found an item
 — a spike can exist even if you can't safely act on it.
 

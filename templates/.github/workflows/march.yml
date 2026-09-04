@@ -167,9 +167,9 @@ jobs:
             --permission-mode bypassPermissions
           prompt: |
             You are running <PROJECT>'s autonomous loop in CI (GitHub Actions).
-            Read agents.md first for the standing rules — they all apply.
+            Read AGENTS.md first for the standing rules — they all apply.
 
-            Cloud-mode adjustments on top of agents.md:
+            Cloud-mode adjustments on top of AGENTS.md:
 
             1. Skip interactive /oversight (it asks; nobody is here). The read-only variant is mandatory instead: END every tick — shipped, no-op, or blocked — by running /oversight audit and printing its briefing into this log, so every run closes with a state-of-the-loop snapshot.
             2. /critique MAY run when its /march gate opens, using the reader's WebFetch engine (Path B — the Chrome MCP is not available on the runner). Findings carry source: web-fetch. If bearings Auth is not "none" and no CRITIQUE_* secrets are configured in this workflow's env, run the anonymous pass only — never file auth-failed noise for a wall you knew about.
@@ -180,7 +180,7 @@ jobs:
 
                   Cloud-Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-               This is how the next tick's ceiling check distinguishes cloud-shipped commits from the user's local work. If a commit lacks this trailer it does not count toward the cloud ceiling, which would let the loop run away. Treat the trailer as non-negotiable, like the verify gate. agents.md's "no Co-Authored-By trailers, plain commit message bodies" rule has an explicit carve-out for this single trailer; nothing else.
+               This is how the next tick's ceiling check distinguishes cloud-shipped commits from the user's local work. If a commit lacks this trailer it does not count toward the cloud ceiling, which would let the loop run away. Treat the trailer as non-negotiable, like the verify gate. AGENTS.md's "no Co-Authored-By trailers, plain commit message bodies" rule has an explicit carve-out for this single trailer; nothing else.
             7. If the tick cannot ship cleanly (red verify, red deploy, blocked phase, no work to do, anything else), do NOT half-commit. Either:
                - exit cleanly with a one-line note in the action log explaining why no work shipped this tick, or
                - if there is a real failure to surface, open a GitHub issue with `gh issue create --title "Cloud march failed: <iso-date>" --body "<context + run URL>"` and exit. Do not pass `--label` — the issue lands unlabeled and the next scheduled tick's /triage classifies and labels it appropriately.

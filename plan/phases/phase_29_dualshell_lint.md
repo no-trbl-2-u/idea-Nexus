@@ -27,7 +27,7 @@ grep, a PowerShell twin drifting from its bash sibling).
   marker on the line right before the fence. Blocks that don't
   touch a POSIX-only tool (git/node one-liners, `.env` samples)
   need neither — no annotation burden on the common case.
-- `agents.md` rule 3 and `plan/bearings.md`'s stack table:
+- `AGENTS.md` rule 3 and `plan/bearings.md`'s stack table:
   leg count/order updated (6 → 7 legs, `dualshell` appended).
   `README.md`'s tree comment for `verify.mjs` gets the same.
 - Fix the two real gaps the leg's first run surfaced:

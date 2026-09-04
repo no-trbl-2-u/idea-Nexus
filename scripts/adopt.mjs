@@ -66,7 +66,7 @@ const COPY_MAP = [
   ['templates/claude', '.claude'],
   ['templates/claude/CLAUDE.md', 'CLAUDE.md'],
   ['templates/scripts', 'scripts'],
-  ['templates/agents.md', 'agents.md'],
+  ['templates/AGENTS.md', 'AGENTS.md'],
   ['templates/env/env.example', '.env.example'],
   ['templates/plan/AUDIT.md', 'plan/AUDIT.md'],
   ['templates/plan/CRITIQUE.md', 'plan/CRITIQUE.md'],

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // .claude/hooks/guard.mjs — mechanical enforcement of the
-// standing rules in agents.md. Wired via .claude/settings.json:
+// standing rules in AGENTS.md. Wired via .claude/settings.json:
 //
 //   PreToolUse (matcher: Bash)  → node .claude/hooks/guard.mjs pre-bash
 //   Stop                        → node .claude/hooks/guard.mjs stop
@@ -78,7 +78,7 @@ const RULES = [
     name: 'no-verify',
     test: (cmd) => /\bgit\b[^|;&]*\bcommit\b[^|;&]*(\s--no-verify\b|\s-n\b)/.test(cmd),
     message:
-      'guard: --no-verify is forbidden (agents.md standing rule 3). ' +
+      'guard: --no-verify is forbidden (AGENTS.md standing rule 3). ' +
       'The verify gate is non-negotiable — fix the root cause of the ' +
       'failing check, then commit normally.',
   },
@@ -88,7 +88,7 @@ const RULES = [
       /\bgit\b[^|;&]*\bpush\b[^|;&]*(\s--force(-with-lease)?\b|\s-f\b)/.test(cmd) ||
       /\bgit\b[^|;&]*\bpush\b[^|;&]*\s\+\S/.test(cmd),
     message:
-      'guard: force-push is forbidden (agents.md standing rule 5). ' +
+      'guard: force-push is forbidden (AGENTS.md standing rule 5). ' +
       'If the push was rejected, run git pull --ff-only and re-apply. ' +
       'If history is genuinely wrong, stop and file [needs-user-call] ' +
       'per your skill\'s failure modes.',
@@ -101,9 +101,22 @@ const RULES = [
       /\bgit\b[^|;&]*\bcheckout\b\s+(--\s+)?\.(\s|$)/.test(cmd) ||
       new RegExp(`\\bgit\\b[^|;&]*\\bbranch\\b[^|;&]*\\s-D\\s+${DEFAULT_BRANCH}\\b`).test(cmd),
     message:
-      'guard: destructive resets are forbidden (agents.md standing ' +
+      'guard: destructive resets are forbidden (AGENTS.md standing ' +
       'rule 5). Uncommitted work is either shipped (commit it) or a ' +
       'finding (write it to plan/AUDIT.md) — never discarded.',
+  },
+  {
+    // The trailer/emoji and commit-verb rules below lint the message
+    // as it appears in the command string; a message read from a
+    // file is invisible to both, so the escape hatch is closed here.
+    name: 'commit-message-from-file',
+    test: (cmd) =>
+      /\bgit\b[^|;&]*\bcommit\b[^|;&]*(\s--file\b|\s-[a-zA-Z]*F\b)/.test(cmd),
+    message:
+      'guard: git commit -F/--file is forbidden — the guard lints commit ' +
+      'messages from the command string (AGENTS.md standing rule 2 and ' +
+      'the commit-verb vocabulary), and a message file is invisible to ' +
+      'it. Write the message inline with -m.',
   },
   {
     name: 'trailer-or-emoji-in-commit',
@@ -112,7 +125,7 @@ const RULES = [
       (/Co-Authored-By/i.test(cmd) ||
         /[\u{1F000}-\u{1FAFF}\u{2705}\u{2728}\u{FE0F}]/u.test(cmd)),
     message:
-      'guard: commit bodies are plain (agents.md standing rule 2) — ' +
+      'guard: commit bodies are plain (AGENTS.md standing rule 2) — ' +
       'no Co-Authored-By trailers, no emojis. The only sanctioned ' +
       'trailer is Cloud-Run: (cloud ticks only). Rewrite the message.',
   },
@@ -144,7 +157,7 @@ function backgroundedGate(input) {
 
 const BACKGROUND_MESSAGE =
   'guard: never run the verify/deploy gate in the background ' +
-  '(agents.md standing rule 3 — the post-result exit hang). Run it ' +
+  '(AGENTS.md standing rule 3 — the post-result exit hang). Run it ' +
   'as a foreground, blocking call and wait for it. If the gate is ' +
   'too slow, run its legs as sequential foreground calls.'
 
@@ -267,6 +280,10 @@ function selfTest() {
     ['git commit -m "x" --no-verify', 'no-verify'],
     ['git commit --no-verify -m "x"', 'no-verify'],
     ['git commit -n -m "x"', 'no-verify'],
+    // message-from-file bypasses the verb + trailer/emoji lint
+    ['git commit -F msg.txt', 'commit-message-from-file'],
+    ['git commit --file=msg.txt', 'commit-message-from-file'],
+    ['git commit -aF msg.txt', 'commit-message-from-file'],
     ['git push --force origin main', 'force-push'],
     ['git push -f', 'force-push'],
     ['git push --force-with-lease origin main', 'force-push'],
