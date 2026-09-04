@@ -294,8 +294,9 @@ Skills live in `skills/`; state lives in `plan/`; the next
 pending work is the first `[ ]` row in
 `plan/steps/01_build_plan.md`.
 
-This file is a pointer, not a rule book. Rules live in
-`AGENTS.md` only — do not duplicate them here.
+This file is a pointer, not a rule book. Rules are canonical
+in `AGENTS.md`; skills may restate them — do not duplicate
+them here.
 ```
 
 Keep `AGENTS.md` canonical (client-agnostic); keep `CLAUDE.md`

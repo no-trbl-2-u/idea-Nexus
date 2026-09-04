@@ -16,9 +16,9 @@ from silently growing a third participant to sync.
 
 ## Orientation
 
-- Landing here as an agent? Read `CLAUDE.md` or `AGENTS.md`
-  first — same content, different filename per which agent
-  reads which convention.
+- Landing here as an agent? Read `AGENTS.md` first.
+  `CLAUDE.md` is a one-line `@AGENTS.md` import so Claude Code
+  auto-loads the same text.
 - Rebuilding this workspace on a new machine? `REPOS.md` lists
   every sibling repo and its clone command.
 - Anything else that lives only at this level — scratch notes,

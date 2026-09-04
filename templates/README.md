@@ -84,8 +84,8 @@ templates/
 ├── env/
 │   └── env.example                    → repo's .env.example
 └── workspace/                          → workspace ROOT, not any repo (adopt-by-need; see below)
-    ├── CLAUDE.md                       (agent-facing root pointer)
-    ├── AGENTS.md                       (same content, non-Claude-Code agents)
+    ├── AGENTS.md                       (agent-facing root pointer, canonical)
+    ├── CLAUDE.md                       (one-line @AGENTS.md import for Claude Code)
     ├── README.md                       (human-facing root orientation)
     └── REPOS.md                        (sibling-repo clone manifest)
 ```
