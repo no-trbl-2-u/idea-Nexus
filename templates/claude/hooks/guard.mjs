@@ -106,6 +106,19 @@ const RULES = [
       'finding (write it to plan/AUDIT.md) — never discarded.',
   },
   {
+    // The trailer/emoji and commit-verb rules below lint the message
+    // as it appears in the command string; a message read from a
+    // file is invisible to both, so the escape hatch is closed here.
+    name: 'commit-message-from-file',
+    test: (cmd) =>
+      /\bgit\b[^|;&]*\bcommit\b[^|;&]*(\s--file\b|\s-[a-zA-Z]*F\b)/.test(cmd),
+    message:
+      'guard: git commit -F/--file is forbidden — the guard lints commit ' +
+      'messages from the command string (AGENTS.md standing rule 2 and ' +
+      'the commit-verb vocabulary), and a message file is invisible to ' +
+      'it. Write the message inline with -m.',
+  },
+  {
     name: 'trailer-or-emoji-in-commit',
     test: (cmd) =>
       /\bgit\b[^|;&]*\bcommit\b/.test(cmd) &&
@@ -267,6 +280,10 @@ function selfTest() {
     ['git commit -m "x" --no-verify', 'no-verify'],
     ['git commit --no-verify -m "x"', 'no-verify'],
     ['git commit -n -m "x"', 'no-verify'],
+    // message-from-file bypasses the verb + trailer/emoji lint
+    ['git commit -F msg.txt', 'commit-message-from-file'],
+    ['git commit --file=msg.txt', 'commit-message-from-file'],
+    ['git commit -aF msg.txt', 'commit-message-from-file'],
     ['git push --force origin main', 'force-push'],
     ['git push -f', 'force-push'],
     ['git push --force-with-lease origin main', 'force-push'],
