@@ -111,7 +111,7 @@ comment (best-effort):
 
 ```bash
 node templates/scripts/loop-issue.mjs phase-close \
-  --phase <N> --commit <sha> --deploy-url https://github.com/daretodave/nexus
+  --phase <N> --commit <sha> --deploy-url https://github.com/no-trbl-2-u/idea-Nexus
 ```
 
 ### Step 9 — Done

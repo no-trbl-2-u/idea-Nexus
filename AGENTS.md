@@ -80,7 +80,9 @@ ever copied into an adopter repo.
 
 **nexus** — a methodology + template kit that turns a repo
 into a project that ships itself. Lives at
-https://github.com/daretodave/nexus. The product spec is
+https://github.com/no-trbl-2-u/idea-Nexus (forked from
+daretodave/nexus; this fork adds the warm adoption path for The
+Estate). The product spec is
 `README.md` (what the kit promises) plus
 `concepts/architecture.md` (how it works). There is no
 `spec.md`; for a kit, the README is the spec.
@@ -132,7 +134,7 @@ verbs — a docs kit ships docs, not pages.
 - **`GH_TOKEN`** — optional locally (`gh auth login` works);
   the cloud loop sets it from the `ACTIONS_PAT` secret. Used
   for `/triage` and the issue mirror.
-  `GH_REPO=daretodave/nexus`.
+  `GH_REPO=no-trbl-2-u/idea-Nexus`.
 - **`CLAUDE_CODE_OAUTH_TOKEN`** — repo secret for the cloud
   loop only. Mint with `claude setup-token`.
 - **`ACTIONS_PAT`** — repo secret; fine-grained PAT (Contents +

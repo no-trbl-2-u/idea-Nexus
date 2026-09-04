@@ -131,5 +131,5 @@ node scripts/verify.mjs              # the whole gate
 node scripts/verify.mjs links        # one leg
 npm run verify                       # same, via npm
 node .claude/hooks/guard.mjs self-test
-gh issue list --repo daretodave/nexus --state open
+gh issue list --repo no-trbl-2-u/idea-Nexus --state open
 ```

@@ -14,7 +14,7 @@
 
 1. **Install the Claude Code GitHub App** on this repo:
    https://github.com/apps/claude → Install → select
-   `daretodave/nexus`. The action exchanges its OIDC token for
+   `no-trbl-2-u/idea-Nexus`. The action exchanges its OIDC token for
    an app token; without the app the run dies at
    `401 — Claude Code is not installed on this repository`
    before Anthropic auth ever runs. (The kit knew this — see
