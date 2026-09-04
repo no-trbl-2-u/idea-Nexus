@@ -8,7 +8,7 @@ Copy these into your target repo per the playbook
 
 ```
 templates/
-├── agents.md                          → repo root
+├── AGENTS.md                          → repo root
 ├── design-prompt.md                   → optional, copy to <repo>/claude-design.prompt.md
 │                                        when commissioning a visual system
 ├── plan/                              → repo's plan/
@@ -43,7 +43,7 @@ templates/
 │   ├── seed-check.md                  (gate a proposed change against spec.md's Refusals + Horizon)
 │   └── re-seed.md                     (field report back to spec.md's origin; see prompts/adopt-from-seed.md)
 ├── claude/                            → repo's .claude/ (+ CLAUDE.md → repo root)
-│   ├── CLAUDE.md                      (short pointer at agents.md; copy to repo ROOT)
+│   ├── CLAUDE.md                      (short pointer at AGENTS.md; copy to repo ROOT)
 │   ├── settings.json                  (permission allowlist + hook wiring; see customization/claude-code.md)
 │   ├── hooks/guard.mjs                (mechanical hard rules: PreToolUse + Stop)
 │   ├── commands/                      (one terse pointer per skill)

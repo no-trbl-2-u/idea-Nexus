@@ -350,7 +350,7 @@ table and "Upgrading the model") — the exact bug class fixed in
 `playbooks/cloud-loop.md:62` two ticks ago (2026-07-23 third),
 but that fix only touched the internal playbook copy and missed
 this template counterpart, which is the one adopters actually
-receive (`agents.md` rule 7: templates are the product).
+receive (`AGENTS.md` rule 7: templates are the product).
 Shipped it over `plan/CRITIQUE.md`'s sole remaining LOW row
 (`.claude/` prune-list gap) and this block's own carried-over
 rows (2.7, 1.8, 1.6, 1.35) — higher impact (adopter-facing
@@ -534,7 +534,7 @@ skills/*.md path references all resolve; voice/wrap sampling
 on recently-touched docs clean; model ids all carry the
 standing caveat, none stale). G still empty — no sibling
 lessons dirs present in this checkout. New A finding: README's
-own "What's in this kit" tree lists `agents.md` then jumps
+own "What's in this kit" tree lists `AGENTS.md` then jumps
 straight to `package.json`, skipping root `CLAUDE.md` — a real
 file (`ls` confirms) that's load-bearing (Claude Code only
 auto-loads `CLAUDE.md` from repo root, not `.claude/`) and
@@ -733,7 +733,7 @@ contradicting `templates/skills/bootstrap.md`'s own documented
 carve-out. Shipped it: reworded the absolute claim to
 "`/oversight` and `/bootstrap`" everywhere it appeared (13
 files total, both this repo's own docs and their `templates/`
-twins — `templates/` is public API per `agents.md` rule 7, so
+twins — `templates/` is public API per `AGENTS.md` rule 7, so
 its copies needed the identical fix, not just the kit's own
 docs). Full rationale and file list in `plan/CRITIQUE.md`'s
 Done section. AUDIT block otherwise unchanged; four Pending
@@ -826,7 +826,7 @@ next). Audit only — shipped nothing, per `skills/digest.md` rule 2.
   the checkout-configured git credentials with its own App
   token before the agent's turn starts, or (b) `ACTIONS_PAT`
   not actually carrying `workflows` scope despite the re-mint
-  note in `agents.md`.
+  note in `AGENTS.md`.
 - next: needs a local session to inspect the actual `ACTIONS_PAT`
   scope grants in GitHub's token settings UI and to test whether
   a plain `git push` (bypassing `gh`/the Action's credential
@@ -850,7 +850,7 @@ next). Audit only — shipped nothing, per `skills/digest.md` rule 2.
   installation token (`ghs_...`) authenticating git push, not
   `ACTIONS_PAT` — third confirmed occurrence of the same root
   cause (phase 20, #40, now phase 32). The diff was built and
-  verified green then discarded per agents.md rule 1 (no dirty
+  verified green then discarded per AGENTS.md rule 1 (no dirty
   tree at turn end) rather than left half-committed; full brief
   at `plan/phases/phase_32_scheduled_workflow_disable_watch.md`.
 - next: same resolution as #35/#40 — a local/human session runs
@@ -1050,7 +1050,7 @@ next). Audit only — shipped nothing, per `skills/digest.md` rule 2.
 ### [x] [A, 4.5] README's own kit tree omits root `CLAUDE.md` — this commit
 - fix: added `├── CLAUDE.md` (with a one-line comment on why it
   matters — Claude Code only auto-loads it from repo root) to
-  README.md's "What's in this kit" tree, between `agents.md`
+  README.md's "What's in this kit" tree, between `AGENTS.md`
   and `package.json` — the one root substrate file the tree
   omitted despite the doc's own "Files added" list (line 170)
   and `templates/README.md`'s tree both already treating it as
@@ -1082,7 +1082,7 @@ next). Audit only — shipped nothing, per `skills/digest.md` rule 2.
 ### [x] [A, 2.4] README's own kit tree omits `skills/digest.md` from the collapsed `skills/` enumeration — this commit
 - fix: added `skills/digest.md` as its own leaf line in
   `README.md:509-512`'s collapsed `skills/` tree, noting
-  "never dispatched by march" (matching `agents.md`'s skill
+  "never dispatched by march" (matching `AGENTS.md`'s skill
   table), instead of folding it into the `march.md`
   parenthetical it isn't actually part of.
 
@@ -1318,7 +1318,7 @@ next). Audit only — shipped nothing, per `skills/digest.md` rule 2.
 ### [x] [4.9] verify-gate composition drifts across three docs — this commit (closes #16)
 - fix: declared the canonical composition + two variance rules
   ("data:validate iff data layer; lint optional leg") once in
-  `templates/agents.md`, echoed the lint rule in
+  `templates/AGENTS.md`, echoed the lint rule in
   `templates/plan/bearings.md` (also fixing a bare
   `customization/...` path to `nexus/customization/...`), and
   applied both rules explicitly in `customization/verify-gate.md`'s

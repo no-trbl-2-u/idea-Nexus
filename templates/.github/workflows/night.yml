@@ -63,7 +63,7 @@ jobs:
             --model claude-sonnet-5
             --permission-mode bypassPermissions
           prompt: |
-            You are <PROJECT>'s night shift. Read agents.md, then execute
+            You are <PROJECT>'s night shift. Read AGENTS.md, then execute
             skills/digest.md end to end - it is the single source of truth.
 
             Cloud notes: every gate runs FOREGROUND; your one commit MUST

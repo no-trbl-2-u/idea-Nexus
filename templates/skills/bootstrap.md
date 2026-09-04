@@ -315,7 +315,7 @@ multi-question flows mid-bootstrap.
 7. **No `--no-verify`, no force-push, no destructive resets**
    on git operations.
 8. **The bootstrap's own commits respect the project's
-   `agents.md`** — no Co-Authored-By, no emojis, the right
+   `AGENTS.md`** — no Co-Authored-By, no emojis, the right
    trailers.
 
 ## 8. Delegation
@@ -353,7 +353,7 @@ setup/NN_<service>.md (each)        # checkbox state
 setup/00_files.md                   # row status updates
 plan/AUDIT.md                       # [needs-user-call] for deferred handoffs
 .github/workflows/march.yml         # cloud-loop install (if invoked)
-agents.md                           # cloud-loop trailer carve-out (if invoked)
+AGENTS.md                           # cloud-loop trailer carve-out (if invoked)
 ```
 
 ### External services this skill calls

@@ -71,7 +71,7 @@ without ever needing a `.gitignore` entry per repo:
 
 - **Local scratch** — comparison notes, a running list of
   cross-product questions. Same category as `.article/`
-  (`agents.md`) inside a single repo: never tracked, never
+  (`AGENTS.md`) inside a single repo: never tracked, never
   linked from a tracked doc.
 - **An editor multi-root workspace file** (e.g. a `.code-
   workspace` for VS Code, or the equivalent session file for
@@ -114,7 +114,7 @@ child directory is its own GitHub repo under the
 - `<product-a>/` — <one line: what it ships>
 - `<product-b>/` — <one line: what it ships>
 
-`cd` into the repo you need; each has its own agents.md/
+`cd` into the repo you need; each has its own AGENTS.md/
 CLAUDE.md, verify gate, and git history. Nothing at this level
 is tracked or shipped.
 ```

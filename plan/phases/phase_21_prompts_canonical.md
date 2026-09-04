@@ -30,7 +30,7 @@ would need its own copy.
   landed" / "When this TL;DR is the wrong path" prose stays in
   README — it's human-facing, not part of the agent prompt.
   Kit tree gains an expanded `prompts/` entry.
-- `agents.md`: repo-shape tree gains `prompts/`; rule 7 gains
+- `AGENTS.md`: repo-shape tree gains `prompts/`; rule 7 gains
   a sentence extending the public-API contract to `prompts/`
   paths (narrower surface: pasted text, not copied files).
 - `scripts/verify.mjs`: `discover` leg's regex grows to cover

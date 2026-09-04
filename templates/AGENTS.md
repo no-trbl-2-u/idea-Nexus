@@ -1,4 +1,4 @@
-# agents.md
+# AGENTS.md
 
 > The entry point for any AI agent landing in this repo cold
 > (Claude Code, Cursor, Aider, anything else). Read this top to

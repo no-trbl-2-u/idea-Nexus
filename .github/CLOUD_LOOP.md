@@ -71,7 +71,7 @@ fully in CI); pending phase → `/ship-a-phase`; expand due →
 
 ## The trailer carve-out
 
-`agents.md` rule 2 (plain commit bodies) has exactly one
+`AGENTS.md` rule 2 (plain commit bodies) has exactly one
 exception: cloud commits end with
 `Cloud-Run: <run-url>`. It's how the ceiling distinguishes
 cloud volume from local work. Nothing else — no
@@ -96,7 +96,7 @@ cloud volume from local work. Nothing else — no
   [`playbooks/recovery.md`](../playbooks/recovery.md) §H.
 - **A run wedges `in_progress`** — cancel it; if the log
   stalls right after a green gate, that's the post-result exit
-  hang: the gate was backgrounded, which agents.md rule 3
+  hang: the gate was backgrounded, which AGENTS.md rule 3
   forbids. Full story in
   [`playbooks/cloud-loop.md`](../playbooks/cloud-loop.md).
 - **Ticks no-op forever** — the plan may be out of `[ ]` rows

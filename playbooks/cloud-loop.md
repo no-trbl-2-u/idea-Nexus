@@ -80,7 +80,7 @@ run, and (optionally) a fine-grained PAT.
 
 Before running this playbook, your repo should already have:
 
-- Standard nexus overlay applied (agents.md, plan/, skills/,
+- Standard nexus overlay applied (AGENTS.md, plan/, skills/,
   scripts/deploy-check.mjs).
 - A green local `pnpm verify` and `pnpm deploy:check`.
 - The Claude Code GitHub App installed
@@ -113,7 +113,7 @@ Copy-Item ..\nexus\templates\.github\CLOUD_LOOP.md       .github\CLOUD_LOOP.md
 
 In `.github/workflows/march.yml`, replace:
 
-- `<PROJECT>` → your project name (matches `agents.md`)
+- `<PROJECT>` → your project name (matches `AGENTS.md`)
 - `<PROJECT_PKG_PREFIX>` → your package scope (e.g.,
   `@thock`) or drop the Playwright steps entirely if you
   don't have an e2e workspace
@@ -173,9 +173,9 @@ public health endpoint.)
 If you chose user-author mode, also add `ACTIONS_PAT`. See
 the CLOUD_LOOP.md doc for the PAT scopes required.
 
-## Step 6 — agents.md carve-out for the trailer
+## Step 6 — AGENTS.md carve-out for the trailer
 
-Open your `agents.md` and find rule 2 ("No `Co-Authored-By:`
+Open your `AGENTS.md` and find rule 2 ("No `Co-Authored-By:`
 trailers. No emojis."). Add this paragraph at the end of
 the rule:
 
@@ -192,7 +192,7 @@ the rule honest.
 ## Step 7 — first commit
 
 ```bash
-git add .github/ agents.md
+git add .github/ AGENTS.md
 git commit -m "ops: cloud half of /loop /march via GitHub Actions"
 git push
 ```
@@ -254,7 +254,7 @@ new constraint:
 - Every commit you ship locally must NOT use the
   `Cloud-Run:` trailer (that's reserved for cloud
   commits). Your local skills already follow this; the
-  agents.md carve-out makes it formal.
+  AGENTS.md carve-out makes it formal.
 
 If both halves run simultaneously, the concurrency group
 + git push semantics + ceiling bound ensure they don't
@@ -306,7 +306,7 @@ complexity to make things worse. The fix is to make the CLI able
 to exit, not to kill it after it can't.
 
 **The fix.** Run the gate foreground (standing rule 3 in the
-agents.md template). If it has outgrown one foreground budget,
+AGENTS.md template). If it has outgrown one foreground budget,
 shrink it: split into sequential foreground legs with their own
 bounded timeouts, and move O(content) breadth (per-record
 crawls) to a nightly `e2e-full`-style job that files an issue on

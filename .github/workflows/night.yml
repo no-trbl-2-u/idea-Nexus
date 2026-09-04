@@ -49,7 +49,7 @@ jobs:
             --model claude-sonnet-5
             --permission-mode bypassPermissions
           prompt: |
-            You are nexus's night shift. Read agents.md, then execute
+            You are nexus's night shift. Read AGENTS.md, then execute
             skills/digest.md end to end - it is the single source of truth.
 
             Cloud notes: the verify gate (node scripts/verify.mjs) runs

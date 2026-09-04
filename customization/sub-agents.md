@@ -182,7 +182,7 @@ After writing:
 - [ ] **Wire it into the skill:** the skill that spawns this
       sub-agent should explicitly delegate, not optionally.
 - [ ] **Update bearings:** add a row to the sub-agents table.
-- [ ] **Update agents.md:** add a row to the sub-agents table.
+- [ ] **Update AGENTS.md:** add a row to the sub-agents table.
 
 ---
 

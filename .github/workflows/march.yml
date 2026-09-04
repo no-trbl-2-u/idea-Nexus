@@ -122,10 +122,10 @@ jobs:
           prompt: |
             You are running nexus's autonomous loop in CI. This repo IS the
             methodology kit — the loop you are executing is the loop the kit
-            teaches, applied to itself. Read agents.md first; its standing
+            teaches, applied to itself. Read AGENTS.md first; its standing
             rules all apply.
 
-            Cloud-mode adjustments on top of agents.md:
+            Cloud-mode adjustments on top of AGENTS.md:
 
             1. Skip interactive /oversight. END every tick — shipped, no-op,
                or blocked — by running /oversight audit (read-only) and
@@ -136,7 +136,7 @@ jobs:
                Never promote candidates from cloud.
             4. The verify gate (node scripts/verify.mjs) is non-negotiable
                and runs FOREGROUND — never run_in_background. There is no
-               deploy gate (agents.md rule 4): the push is the deploy.
+               deploy gate (AGENTS.md rule 4): the push is the deploy.
             5. The git author is already configured via GIT_AUTHOR_* /
                GIT_COMMITTER_* env vars. Do not run git config user.* —
                the env vars win at commit time anyway.
@@ -145,7 +145,7 @@ jobs:
 
                   Cloud-Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-               This is how the ceiling counts cloud commits. agents.md rule 2
+               This is how the ceiling counts cloud commits. AGENTS.md rule 2
                has an explicit carve-out for this single trailer.
             7. If the tick cannot ship cleanly, do NOT half-commit: exit with
                a one-line note in this log, or open an unlabeled issue via

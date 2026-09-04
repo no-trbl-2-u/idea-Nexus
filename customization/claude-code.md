@@ -1,6 +1,6 @@
 # Customization: the Claude Code layer
 
-> nexus is deliberately client-agnostic — `agents.md` and
+> nexus is deliberately client-agnostic — `AGENTS.md` and
 > `skills/*.md` are readable by any capable agent. This doc is
 > the opt-in layer for projects that run the loop on **Claude
 > Code specifically**: permission pre-approval, hook-enforced
@@ -45,7 +45,7 @@ can hold it:
 
 | Altitude | Mechanism | Catches |
 |---|---|---|
-| Prose | `agents.md`, `skills/*.md` | The 99% case — the agent follows the recipe. |
+| Prose | `AGENTS.md`, `skills/*.md` | The 99% case — the agent follows the recipe. |
 | Harness | `.claude/settings.json` permissions + hooks | The 1% case — a confused or compacted agent tries the forbidden thing. |
 | Provider | Branch protection, PAT scopes, read-only DSNs | The 0.1% case — anything local goes wrong at once. |
 
@@ -56,7 +56,7 @@ Mapping the standing rules to their backstops:
 | No `--no-verify` | every skill §Hard rules | `guard.mjs` denies the string | required CI check on the branch |
 | No force-push | every skill §Hard rules | `guard.mjs` + permissions deny | branch protection: no force pushes |
 | No destructive resets | every skill §Hard rules | `guard.mjs` denies `reset --hard`, `clean -fd` | reflog + branch protection |
-| Never background the gate | `agents.md` §3 | `guard.mjs` denies `run_in_background` on gate commands | CI re-runs the gate anyway |
+| Never background the gate | `AGENTS.md` §3 | `guard.mjs` denies `run_in_background` on gate commands | CI re-runs the gate anyway |
 | Commit + push atomic | every skill §Procedure | Stop hook warns on dirty tree / unpushed commits | — |
 | Loop stops are surfaced | skills §Failure modes | Stop/Notification hook fires `notify.mjs` | cloud crash issue (`march.yml`) |
 
@@ -208,7 +208,7 @@ The block message tells the agent *why* and what to do
 instead, so a blocked call self-corrects rather than looping:
 
 ```
-guard: git push --force is forbidden by agents.md standing
+guard: git push --force is forbidden by AGENTS.md standing
 rule 5. If the push was rejected, run git pull --ff-only and
 re-apply; if history is genuinely wrong, stop and file
 [needs-user-call] per your skill's failure modes.
@@ -269,7 +269,7 @@ Where it fires:
 
 1. **The Stop hook** (above) — dirty-tree / unpushed warnings.
 2. **Skill failure modes** — the convention is one line added
-   to `agents.md`: *"Before stopping on any failure mode, run
+   to `AGENTS.md`: *"Before stopping on any failure mode, run
    `node scripts/notify.mjs` with the stop reason —
    best-effort, never blocking."* One rule, every skill
    inherits it.
@@ -282,23 +282,23 @@ Where it fires:
 ## 4. The `CLAUDE.md` pointer
 
 Claude Code auto-loads `CLAUDE.md` into context. It does not
-auto-load `agents.md` — the kit's rule book — which means a
+auto-load `AGENTS.md` — the kit's rule book — which means a
 fresh session only finds the standing rules if something tells
 it to look. Ship the short pointer
 ([`templates/claude/CLAUDE.md`](../templates/claude/CLAUDE.md)):
 
 ```markdown
-Read `agents.md` before anything else — it is the rule book
+Read `AGENTS.md` before anything else — it is the rule book
 for this repo and its standing rules are non-negotiable.
 Skills live in `skills/`; state lives in `plan/`; the next
 pending work is the first `[ ]` row in
 `plan/steps/01_build_plan.md`.
 
 This file is a pointer, not a rule book. Rules live in
-`agents.md` only — do not duplicate them here.
+`AGENTS.md` only — do not duplicate them here.
 ```
 
-Keep `agents.md` canonical (client-agnostic); keep `CLAUDE.md`
+Keep `AGENTS.md` canonical (client-agnostic); keep `CLAUDE.md`
 a pointer. Don't duplicate rules into it — duplicated rules
 drift.
 
@@ -439,7 +439,7 @@ methodology:
    finding to record, not a normal event.
 4. **`notify.mjs` must never block.** Always exit 0; a dead
    notification channel must not become a new stop condition.
-5. **`CLAUDE.md` stays a pointer.** Rules live in `agents.md`
+5. **`CLAUDE.md` stays a pointer.** Rules live in `AGENTS.md`
    only.
 6. **Hooks are committed, not local.** `guard.mjs` and the
    `hooks` block in `settings.json` are methodology, same as
@@ -486,7 +486,7 @@ methodology:
       your phone.
 - [ ] `templates/claude/CLAUDE.md` copied to repo root as
       `CLAUDE.md`.
-- [ ] `agents.md` gains the notify-before-stopping line
+- [ ] `AGENTS.md` gains the notify-before-stopping line
       (§3 above).
 - [ ] One attended `/march` tick observed with the layer
       active: zero permission prompts, zero guard blocks.

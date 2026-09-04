@@ -234,7 +234,7 @@ path. For a CLI: every subcommand.>
 <repo-root>/
 ├── spec.md
 ├── README.md
-├── agents.md
+├── AGENTS.md
 ├── package.json (or equivalent)
 ├── ...
 ├── .claude/
@@ -354,7 +354,7 @@ category.
 
 ## Hard rules
 
-(Mirrors `agents.md` Standing Rules. Update there first; this
+(Mirrors `AGENTS.md` Standing Rules. Update there first; this
 echoes.)
 
 1. **Commit and push as a single atomic act.**
@@ -420,7 +420,7 @@ per the skill's failure modes.
 - **A red `<DEFAULT_BRANCH>` = a red site.** Verify gate is
   pre-flight; deploy gate is post-flight.
 - **Operational secrets** in `.env` (gitignored). See
-  `agents.md` "Operational secrets" section.
+  `AGENTS.md` "Operational secrets" section.
 
 ## Useful commands
 

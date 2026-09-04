@@ -26,7 +26,7 @@ writes a `.git/hooks/pre-commit` that runs `pnpm verify`
 (`--uninstall` removes it). Opt-in — nothing runs it for you
 until you do.
 
-The canonical composition (`agents.md` rule 3) is `typecheck →
+The canonical composition (`AGENTS.md` rule 3) is `typecheck →
 test:run → data:validate → build → e2e`, with two variance
 rules: `data:validate` runs iff the project has a data layer —
 drop the leg otherwise; `lint` is optional — wire it into

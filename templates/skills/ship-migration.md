@@ -177,7 +177,7 @@ commit.
    `/oversight` escalation with the file and the flagged
    statement; do not ship.
 2. **`pnpm db:migrate:test` fails ≥3 times on the same root
-   cause.** Stop the tick per `agents.md` rule 6.
+   cause.** Stop the tick per `AGENTS.md` rule 6.
 3. **RLS test fails.** The policy is wrong, not the test — fix
    the policy, never loosen the test to pass.
 4. **No local/throwaway DB available** (Docker unavailable, no

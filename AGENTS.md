@@ -1,4 +1,4 @@
-# agents.md
+# AGENTS.md
 
 > The entry point for any AI agent landing in this repo cold.
 > This repo is nexus — the methodology + template kit — and it

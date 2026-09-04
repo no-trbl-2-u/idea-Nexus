@@ -125,7 +125,7 @@ the `.env` gitignore lines in the same pass (see
 overlay step can trip on Windows):
 
 ```bash
-node -e "const fs=require('fs');fs.mkdirSync('plan/steps',{recursive:true});fs.mkdirSync('plan/phases',{recursive:true});for(const [s,d] of [['templates/skills','skills'],['templates/claude','.claude'],['templates/claude/CLAUDE.md','CLAUDE.md'],['templates/scripts','scripts'],['templates/agents.md','agents.md'],['templates/env/env.example','.env.example'],['templates/plan/README.md','plan/README.md'],['templates/plan/bearings.md','plan/bearings.md'],['templates/plan/AUDIT.md','plan/AUDIT.md'],['templates/plan/CRITIQUE.md','plan/CRITIQUE.md'],['templates/plan/PHASE_CANDIDATES.md','plan/PHASE_CANDIDATES.md'],['templates/plan/CURRENT-STATE.md','plan/CURRENT-STATE.md'],['templates/plan/steps/01_build_plan.md','plan/steps/01_build_plan.md']]) fs.cpSync('../nexus/'+s,d,{recursive:true});const gi=fs.existsSync('.gitignore')?fs.readFileSync('.gitignore','utf-8'):'';const add=['.env','.env.local','.env.*.local'].filter(l=>!gi.includes(l));if(add.length) fs.appendFileSync('.gitignore','\n'+add.join('\n')+'\n')"
+node -e "const fs=require('fs');fs.mkdirSync('plan/steps',{recursive:true});fs.mkdirSync('plan/phases',{recursive:true});for(const [s,d] of [['templates/skills','skills'],['templates/claude','.claude'],['templates/claude/CLAUDE.md','CLAUDE.md'],['templates/scripts','scripts'],['templates/AGENTS.md','AGENTS.md'],['templates/env/env.example','.env.example'],['templates/plan/README.md','plan/README.md'],['templates/plan/bearings.md','plan/bearings.md'],['templates/plan/AUDIT.md','plan/AUDIT.md'],['templates/plan/CRITIQUE.md','plan/CRITIQUE.md'],['templates/plan/PHASE_CANDIDATES.md','plan/PHASE_CANDIDATES.md'],['templates/plan/CURRENT-STATE.md','plan/CURRENT-STATE.md'],['templates/plan/steps/01_build_plan.md','plan/steps/01_build_plan.md']]) fs.cpSync('../nexus/'+s,d,{recursive:true});const gi=fs.existsSync('.gitignore')?fs.readFileSync('.gitignore','utf-8'):'';const add=['.env','.env.local','.env.*.local'].filter(l=>!gi.includes(l));if(add.length) fs.appendFileSync('.gitignore','\n'+add.join('\n')+'\n')"
 ```
 
 (The `CLAUDE.md` line is deliberate, not redundant with the
@@ -314,7 +314,7 @@ What you're watching for:
   "we use X" — does it use X)?
 - Does verify run cleanly against the existing test suite?
 - Does the commit subject match your team's commit style? (If
-  not, add a Hard Rule to `agents.md`.)
+  not, add a Hard Rule to `AGENTS.md`.)
 - Does the push trigger the deploy gate cleanly?
 
 If any step is wrong, **fix the methodology files, not the
@@ -365,7 +365,7 @@ loop.
 
 ### The team has commit-message conventions
 
-Add to `agents.md` Standing Rules:
+Add to `AGENTS.md` Standing Rules:
 
 > Commit subjects follow `<type>(<scope>): <subject>` per the
 > team's existing convention. Types: feat, fix, chore, docs,
@@ -397,7 +397,7 @@ If you want the loop to address debt, write findings:
 ### Existing branding / naming differs
 
 Brownfield projects have a name. Don't lowercase it just because
-nexus templates do. Update the Hard Rules section of `agents.md`
+nexus templates do. Update the Hard Rules section of `AGENTS.md`
 to reflect your project's actual conventions.
 
 ---

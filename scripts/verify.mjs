@@ -464,7 +464,7 @@ const LEGS = {
 
 // Opt-in legs run only when named explicitly or env-gated on —
 // excluded from the default no-argument pass so the gate stays
-// fast (agents.md rule 3: foreground, every commit).
+// fast (AGENTS.md rule 3: foreground, every commit).
 const OPT_IN_LEGS = new Set(['adopt-dryrun'])
 
 function main() {

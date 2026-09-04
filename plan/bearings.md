@@ -23,7 +23,7 @@ projects use `site | service | library | cli | hybrid`.)
 |---|---|---|
 | Content | Markdown, hard-wrapped ~62–64 cols | Tables exempt from wrap |
 | Scripts | Node ≥18, zero dependencies, ESM `.mjs` | No `node_modules`, no lockfile |
-| Verify gate | `node scripts/verify.mjs` | 7 legs; see `agents.md` rule 3 |
+| Verify gate | `node scripts/verify.mjs` | 7 legs; see `AGENTS.md` rule 3 |
 | Deploy gate | none — push is the deploy | `npm run deploy:check` = symmetry no-op |
 | Issue mirror | `node templates/scripts/loop-issue.mjs` | The kit dogfoods its own template in place |
 
@@ -66,7 +66,7 @@ Every commit's first line is `<verb>: <subject>` (or
 stripped before matching, so `fix(cloud):` matches as `fix`).
 `.claude/hooks/guard.mjs`'s `commit-verb` rule blocks anything
 else at commit time; a block firing is itself a finding
-(agents.md rule 6).
+(AGENTS.md rule 6).
 
 | Verb | Fires from |
 |---|---|
@@ -88,7 +88,7 @@ else at commit time; a block firing is itself a finding
 
 New verb → add the row here and to `VERBS` in
 `.claude/hooks/guard.mjs` (plus its `self-test` cases) in the
-same commit — the gate-teaching rule (agents.md rule 3) applies
+same commit — the gate-teaching rule (AGENTS.md rule 3) applies
 to the guard hook too.
 
 ## Plan expansion posture
@@ -119,7 +119,7 @@ to the guard hook too.
 
 ## Hard rules
 
-Mirrors `agents.md` — that file is canonical. Verify gate
+Mirrors `AGENTS.md` — that file is canonical. Verify gate
 foreground; atomic commit+push; no trailers/emojis except the
 cloud `Cloud-Run:` carve-out; blocked is loud (issue mirror);
 templates are public API.

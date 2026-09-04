@@ -88,7 +88,7 @@ one for a verb you've manually performed and felt the friction.
    following `concepts/skills-anatomy.md` § skill template.
    Write the matching slash command at
    `templates/claude/commands/<verb>.md`.
-4. Update `templates/agents.md` skills table.
+4. Update `templates/AGENTS.md` skills table.
 5. Update README skills table.
 6. PR.
 

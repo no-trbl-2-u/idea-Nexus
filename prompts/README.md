@@ -41,7 +41,7 @@ here is copied by the adoption flow itself.
 
 These files are pasted by adopters and may be linked to
 directly from outside this repo. Treat paths and section
-structure the same as `templates/` (`agents.md` rule 7):
+structure the same as `templates/` (`AGENTS.md` rule 7):
 renames are breaking changes.
 
 ## See also
